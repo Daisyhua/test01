@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:v-on="http://www.w3.org/1999/xhtml" xmlns:v-bind="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <!--第一步：引入vue.js -->
+    <script type="text/javascript" src="static/vue.min.js"></script>
+    <style>
+        .red {
+            color: red;
+        }
+        .big {
+            font-size: 30px;
+        }
+    </style>
+
+</head>
+<body >
+
+  <!--
+    v-on:事件   相当于@事件
+    v-bind:属性 相当于:属性
+  -->
+  <div class="app">
+            <div class="red big">内容</div>
+            <div :class="{red:isRed,big:isBig}">文字</div>
+            <div :class="['red','big']">文字</div>
+
+      <a   :href="ww">走</a>
+  </div>
+
+
+
+<script>
+  new Vue({
+        el:".app",
+        data:{
+            message:"<h1>hello</h1>",
+            isRed:true,
+            isBig:false,
+            ww:"http://www.atguigu.com"
+       },
+      methods:{
+
+      }
+    });
+
+</script>
+
+</body>
+</html>

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+
+    <script src="static/vue.min.js"></script>
+
+</head>
+
+<body>
+
+ <div id="app">
+      <div v-if="num > 8">大于8的数字 if</div>
+     <!-- <div v-else-if="num > 5">大于5小于等于8数字</div>
+      <div v-else-if="num > 3">大于3小于等于5数字</div>
+      <div  v-else>小于等于3的数字</div>-->
+
+      <div v-show="num > 10"> 这是大于10的数字 show </div>
+ </div>
+
+    <script>
+       new Vue({
+           el:"#app",
+           data:{
+              num:1
+           }
+       });
+    </script>
+</body>
+</html>

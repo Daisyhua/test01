@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:v-on="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <!--第一步：引入vue.js -->
+    <script type="text/javascript" src="static/vue.min.js"></script>
+</head>
+<body >
+
+  <!--
+     v-on:事件名='方法名(参数1，参数2)'
+等同于    @事件名='方法名(参数1，参数2)'
+   -->
+  <div id="app">
+       {{message}}
+       <input type="button" value="变变变" @click="bian('小芳')">
+  </div>
+
+
+
+
+<script>
+  var vm=  new Vue({
+        el:"#app", //表示当前vue对象要控制的区域:el全称expression Language：vue的表达式语言
+        data:{  //mvvm:中m:model
+            message:"小小"
+        },
+      methods:{
+          bian:function (msg) {
+           this.message=msg;
+          }
+      }
+    });
+
+</script>
+
+</body>
+</html>

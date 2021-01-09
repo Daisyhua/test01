@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:v-on="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <!--第一步：引入vue.js -->
+    <script type="text/javascript" src="static/vue.min.js"></script>
+</head>
+<body >
+
+  <!--
+     v-on:事件名='方法名(参数1，参数2)'
+等同于    @事件名='方法名(参数1，参数2)'
+   -->
+  <div id="app">
+       {{ message }}
+      <input type="button" value="浪起来" @click="lang()">
+      <input type="button" value="别浪" @click="stop()">
+  </div>
+
+
+
+
+<script>
+  var vm=  new Vue({
+        el:"#app",
+        data:{
+            message:"你以为的就只是你以为的",
+            intervalId:null
+       },
+      methods:{
+          lang:function () {
+              if(this.intervalId != null){
+                 return;
+              }
+              //function内部默认不支持this关键字，要想支持this关键字，需要使用箭头函数
+              //es6
+              this.intervalId= setInterval(()=>{
+                  var start = this.message.substring(0,1);
+                  var end=  this.message.substring(1);
+                  this.message= end+start;
+              },500);
+          },
+          stop:function () {
+              clearInterval(this.intervalId);//停止定时任务
+              this.intervalId=null;
+          }
+      }
+    });
+
+</script>
+
+</body>
+</html>

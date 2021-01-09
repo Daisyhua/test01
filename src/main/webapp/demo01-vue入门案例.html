@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <!--第一步：引入vue.js -->
+    <script type="text/javascript" src="static/vue.min.js"></script>
+</head>
+<body >
+  <div id="app">
+      <!-- 插值表达式 -->
+      {{ message }}
+      <input type="text" v-model="message">
+  </div>
+
+
+ <!--
+    使用vue就三步：
+      第一步：引入vue.js
+      第二步：创建一个vue对象，并指定el属性、data属性、methods属性
+      第三步：在页面中指定一个vue控制的区域
+  -->
+
+<script>
+  var vm=  new Vue({
+        el:"#app", //表示当前vue对象要控制的区域:el全称expression Language：vue的表达式语言
+        data:{  //mvvm:中m:model
+            message:2,
+            guigu:"http://www.atguigu.com"
+        }
+    });
+
+</script>
+
+</body>
+</html>

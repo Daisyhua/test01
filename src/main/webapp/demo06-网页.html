@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:v-on="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <!--第一步：引入vue.js -->
+    <script type="text/javascript" src="static/vue.min.js"></script>
+
+</head>
+<body >
+
+  <div class="app">
+         用户名:<input type="text" name="username" @keydown.tab="submit()">
+  </div>
+
+
+<script>
+  new Vue({
+        el:".app",
+        data:{
+       },
+      methods:{
+          submit:function () {
+              alert("提交表单成功");
+          }
+      }
+    });
+
+</script>
+
+</body>
+</html>
